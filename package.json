@@ -1,0 +1,81 @@
+{
+    "name": "qwen",
+    "displayName": "Qwen",
+    "description": "Embed Qwen (https://qwenlm.ai/) in VS Code.",
+    "version": "0.0.1",
+    "publisher": "Kingleo",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/KingLeoJr/vscode-qwen.git"
+    },
+    "engines": {
+      "vscode": "^1.75.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onCommand:qwen.open",
+      "onView:qwenView"
+    ],
+    "main": "./out/extension.js",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+      "color": "#FFFFFF",
+      "theme": "light"
+    },
+    "contributes": {
+      "configuration": {
+        "title": "Qwen",
+        "properties": {
+          "qwen.url": {
+            "type": "string",
+            "default": "https://qwenlm.ai/",
+            "description": "The URL of the Qwen instance to embed."
+          }
+        }
+      },
+      "commands": [
+        {
+          "command": "qwen.open",
+          "title": "Open Qwen"
+        }
+      ],
+      "viewsContainers": {
+        "activitybar": [
+          {
+            "id": "qwen",
+            "title": "Qwen",
+            "icon": "images/activitybar-icon.svg"
+          }
+        ]
+      },
+      "views": {
+        "qwen": [
+          {
+            "id": "qwenView",
+            "name": "Qwen",
+            "type": "webview"
+          }
+        ]
+      }
+    },
+    "scripts": {
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "package": "vsce package"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.75.0",
+      "typescript": "^4.9.4",
+      "vsce": "^2.15.0"
+    },
+    "keywords": [
+      "qwen",
+      "ai",
+      "assistant",
+      "vscode",
+      "extension"
+    ],
+    "license": "MIT"
+  }
